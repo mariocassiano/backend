@@ -3,10 +3,13 @@ defmodule BackendWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug BackendWeb.Plugs.UUIDChecker
   end
 
   scope "/api", BackendWeb do
     pipe_through :api
+
+    resources "/accounts", AccountsController, except: [:new, :edit]
   end
 
   # Enables LiveDashboard only for development
