@@ -11,6 +11,10 @@ config :backend,
   ecto_repos: [Backend.Repo],
   generators: [binary_id: true]
 
+config :backend,
+       Backend.Accounts.Address.LoadAddress,
+       via_cep_adapter: Backend.ViaCep.Client
+
 # Configures the endpoint
 config :backend, BackendWeb.Endpoint,
   url: [host: "localhost"],
