@@ -55,7 +55,9 @@ defmodule Backend.MixProject do
       {:excoveralls, "~> 0.10", only: :test},
       {:sobelow, "~> 0.8", only: :dev},
       {:dialyxir, "~> 0.5.0", only: [:dev, :test], runtime: false},
-      {:ex_machina, "~> 2.7.0"}
+      {:ex_machina, "~> 2.7.0"},
+      {:tesla, "~> 1.4.0"},
+      {:hackney, "~> 1.17.0"}
     ]
   end
 
