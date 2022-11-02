@@ -13,6 +13,10 @@ config :backend, Backend.Repo,
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
+config :backend,
+       Backend.Accounts.Address.LoadAddress,
+       via_cep_adapter: Backend.ViaCep.ClientMock
+
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :backend, BackendWeb.Endpoint,
